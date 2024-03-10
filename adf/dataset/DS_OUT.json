@@ -1,0 +1,31 @@
+{
+	"name": "DS_OUT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_OUT",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"out_file": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().out_file",
+					"type": "Expression"
+				},
+				"fileSystem": "output"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
