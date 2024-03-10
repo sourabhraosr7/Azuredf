@@ -1,0 +1,24 @@
+{
+	"name": "TR_ENT",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_copy_foreach",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/input/blobs/input/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/115b31c0-ccbd-4765-975f-5124b40903c9/resourceGroups/rsg-training/providers/Microsoft.Storage/storageAccounts/strg7771",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
